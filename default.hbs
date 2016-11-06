@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	{{!Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap-responsive.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/docs.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.css"}}" />
+
+
+
+  	{{ghost_head}}
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+{{navigation}}
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <img class="logo" src="{{asset "ico/favicon.png"}}" alt="Responsive devices"/>
+    <h1>{{@blog.title}}</h1>
+    <p class="hero-unit">{{@blog.description}}</p>
+  </div>
+</header>
+
+<div class="container">
+  <main class="col-md-8 main-content">
+    <div class="span9">
+      {{{body}}}
+    </div>
+  </main>
+
+<aside class="col-md-4 sidebar">
+
+<!-- start tag cloud widget -->
+<div class="widget">
+  <h4 class="title"><i class="fa fa-user"></i> ABOUT ME </h4>
+  <div class="content community">
+    <p>
+      <a href="https://github.com/kokonol" title="https://www.kokonol.com/" target="_blank">
+        <i class="fa fa-home"></i>
+      </a>
+
+      <a href="https://github.com/kokonol" title="https://github.com/kokonol" target="_blank">
+        <i class="fa fa-github"></i>
+      </a>
+
+      <a href="https://github.com/kokonol" title="https://github.com/kokonol" target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+
+      <a href="https://github.com/kokonol" title="https://github.com/kokonol" target="_blank">
+        <i class="fa fa-envelope"></i>
+      </a>
+
+      <a href="https://github.com/kokonol" title="https://github.com/kokonol" target="_blank">
+        <i class="fa fa-wechat"></i>
+      </a>
+
+      <a href="https://github.com/kokonol" title="https://github.com/kokonol" target="_blank">
+        <i class="fa fa-qq"></i>
+      </a>
+
+      <a href="https://github.com/kokonol" title="https://github.com/kokonol" target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+
+      <a href="https://github.com/kokonol" title="https://github.com/kokonol" target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+
+      <a href="https://github.com/kokonol" title="https://github.com/kokonol" target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </p>
+
+
+
+  </div>
+</div>
+<!-- end tag cloud widget -->
+<!-- start widget -->
+  <h4 class="title"><i class="fa fa-list-ol"></i> CATEGORIES </h4>
+  <div class="row-fluid">
+    <div class="span3 bs-docs-sidebar">
+
+      <ul class="nav nav-list bs-docs-sidenav">
+        <li class="nav-header"><i class="fa fa-file"></i></li>
+        <li><a href="#code"><i class="fa fa-coffee"></i> Java</a></li>
+        <li><a href="#forms"><i class="fa fa-rocket"></i>  Others</a></li>
+        <li><a href="#tables"><i class="fa fa-html5"></i>  Front</a></li>
+        <li><a href="#forms"><i class="fa fa-database"></i>  Database</a></li>
+        <li><a href="#forms"><i class="fa fa-bug"></i>  WTF</a></li>
+        <li class="divider"></li>
+        <li class="nav-header"><i class="fa fa-server"></i></li>
+        <li><a href="#images"><i class="fa fa-linux"></i> Linux</a></li>
+        <li><a href="#icons"><i class="fa fa-apple"></i> MacOS</a></li>
+        <li class="divider"></li>
+        <li class="nav-header"><i class="fa fa-microchip"></i></li>
+        <li><a href="#images"><i class="fa fa-bicycle"></i> MSC51</a></li>
+        <li><a href="#icons"><i class="fa fa-motorcycle"></i> STM8</a></li>
+        <li><a href="#icons"><i class="fa fa-car"></i>  STM32</a></li>
+        <li><a href="#icons"><i class="fa fa-truck"></i>   Others</a></li>
+        <li class="divider"></li>
+        <li class="nav-header"><i class="fa fa-music"></i></li>
+        <li><a href="#images"><i class="fa fa-thermometer-three-quarters"></i> Valve Amplifiers</a></li>
+      </ul>
+    </div>
+<!-- end widget --> 
+
+<!-- start tag cloud widget -->
+<div class="widget">
+  <h4 class="title"><i class="fa fa-tags"></i> TAGs </h4>
+{{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+    {{#foreach tags}}
+        <a href="/tag/{{slug}}" class="tag-item">{{name}} ({{count.posts}})</a>
+    {{/foreach}}
+{{/get}}
+
+</div>
+
+
+
+<!-- end tag cloud widget --> 
+</aside>
+
+  </div>
+</div>
+
+
+<div class="container-narrow">
+  	<footer class="site-footer">
+        <div class="col-lg-12">
+        	<a href="{{@blog.url}}/rss/"><span class="fa fa-rss"></span> Subscribe</a>
+        	<div class="text-muted">
+          	<section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy; 2015 &bull; All rights reserved.</section>
+            <section class="poweredby">Proudly published with <a href="http://ghost.org">Ghost</a></section>
+          </div>
+        </div>
+    </footer>
+  </div>
+</div>
+
+<script src="{{asset "js/jquery.js"}}"></script>
+<script type="text/javascript" src="{{asset "js/bootstrap-386.js"}}"></script>
+
+    <script src="{{asset "js/bootstrap-transition.js"}}"></script>
+    <script src="{{asset "js/bootstrap-alert.js"}}"></script>
+    <script src="{{asset "js/bootstrap-modal.js"}}"></script>
+    <script src="{{asset "js/bootstrap-dropdown.js"}}"></script>
+    <script src="{{asset "js/bootstrap-scrollspy.js"}}"></script>
+    <script src="{{asset "js/bootstrap-tab.js"}}"></script>
+    <script src="{{asset "js/bootstrap-tooltip.js"}}"></script>
+    <script src="{{asset "js/bootstrap-popover.js"}}"></script>
+    <script src="{{asset "js/bootstrap-button.js"}}"></script>
+    <script src="{{asset "js/bootstrap-collapse.js"}}"></script>
+    <script src="{{asset "js/bootstrap-carousel.js"}}"></script>
+    <script src="{{asset "js/bootstrap-typeahead.js"}}"></script>
+
+</body>
+</html>

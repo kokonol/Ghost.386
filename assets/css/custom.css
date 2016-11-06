@@ -1,0 +1,64 @@
+/*
+ *
+ * Globals
+ *
+ */
+/* Links */
+
+
+@media (min-width: 768px){
+    header h1 {
+        margin: .67em 0;
+        padding-top: 25px;
+        font-size: 6em;
+    }
+    header .logo{
+        float: left;
+        margin: 40px 20px 0 0;
+        display: block;
+        padding: 3px 6px;
+        line-height: 20px;
+        border: 1px solid #ddd
+    }
+}
+@media (max-width: 767px) {
+    header h1 {
+        margin: .67em 0;
+        padding-top: 20px;
+        font-size: 2em;
+    }
+    header .logo{
+        float: center;
+        display: none;
+    }
+}
+
+
+h1 {
+    margin: .67em 0;
+    padding-top: 25px;
+    font-size: 1.2em;
+}
+
+.widget {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.bs-docs-sidenav {
+    margin-bottom: 40px;
+}
+.fa {
+    width: 16px;
+}
+/*
+ *
+ * Base structure
+ *
+ */
+
+html,
+body {
+    height: 100%;
+}
+
+

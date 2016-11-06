@@ -1,0 +1,37 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">[KOKONOL's Blog] VER_0.1</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+            {{#foreach navigation}}
+            	<li class="nav-{{label}} {{#if current}}active{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+            {{/foreach}}
+              <li class="dropdown">
+              <a class="dropdown-toggle" id="drop-share" role="button" data-toggle="dropdown" href="#">
+              Share<b class="caret"></b>
+              </a>
+
+                <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop-share">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" href="#myModal">Action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                  <li role="presentation" class="divider"></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                </ul>
+                </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <img class="logo" src="/assets/img/head.jpg" alt="Responsive devices" />
+</div>

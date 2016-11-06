@@ -1,0 +1,26 @@
+{{!< default}}
+
+
+{{#foreach posts}}
+<div class="">
+<h1 class="">
+		[ <a href="{{url}}">{{{title}}}</a> ]
+</h1>
+		== <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> ==
+</div>
+
+<div class="">
+{{excerpt}}
+</div>
+<a class="btn btn-primary" href="{{url}}">
+      more
+</a>
+{{/foreach}}
+
+
+{{!! After all the posts, we have the previous/next pagination links }}
+{{pagination}}
+
+<div class="inner cover container post post-foot">
+</div>
+
